@@ -253,6 +253,18 @@ label {
 /*----------------------------------------*/
 /*  02. Header CSSS
 /*----------------------------------------*/
+.header-left {
+  flex:  1;
+}
+
+.header-mid {
+  flex: 0;
+}
+
+.header-right {
+  flex: 1;
+}
+
 nav.header-menu ul li a {
   display: inline-block;
   padding: 45px 15px;
@@ -317,4 +329,12 @@ nav.header-menu ul li>a:hover {
 
 .header-search {
   cursor: pointer;
+}
+
+.header-login__mobile {
+  display: none;
+}
+
+a.header-cart__mobile {
+  display: none;
 }
