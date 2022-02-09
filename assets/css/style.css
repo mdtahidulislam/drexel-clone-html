@@ -265,7 +265,7 @@ label {
   flex: 1;
 }
 
-nav.header-menu ul li a {
+.header-menu > ul > li > a {
   display: inline-block;
   padding: 45px 15px;
   text-transform: uppercase;
@@ -274,7 +274,7 @@ nav.header-menu ul li a {
   position: relative;
 }
 
-nav.header-menu ul li a:after {
+.header-menu > ul > li > a:after {
   content: '\f107';
   font-family: 'Font Awesome 6 Free';
   font-weight: 600;
@@ -282,12 +282,71 @@ nav.header-menu ul li a:after {
   margin-left: 3px;
 }
 
-nav.header-menu ul li:first-child a {
+.header-menu > ul > li:first-child a {
   padding-left: 0;
 }
 
-nav.header-menu ul li>a:hover {
+.header-menu > ul > li > a:hover {
   color: var(--theme-secondary);
+}
+
+/* dropdown menu */
+.menu-dropdown {
+  position: relative;
+}
+
+.sub-menu {
+  background: #222222;
+  padding: 10px 15px;
+  min-width: 220px;
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  z-index: 9;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.sub-menu ul li a {
+  color: var(--theme-secondary);
+  font-size: 14px;
+  padding: 10px 0;
+  display: block;
+}
+
+.sub-menu ul li a:hover {
+  color: #fff;
+}
+
+.menu-dropdown:hover .sub-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* mega menu full width */
+.header-inner {
+  position: relative;
+}
+
+.site-nav .mega-menu {
+  position: static;
+}
+
+.mega-menu .sub-menu {
+  padding: 30px;
+}
+
+.mega-menu-title {
+  border-bottom: 1px solid var(--theme-secondary);
+  margin-bottom: 10px;
+}
+
+.mega-menu-title a {
+  display: block;
+  font-size: 16px;
+  color: #fff;
+  text-transform: uppercase;
 }
 
 .toggle-menu {
