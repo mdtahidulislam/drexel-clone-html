@@ -282,6 +282,10 @@ label {
   margin-left: 3px;
 }
 
+.no--arrow:after {
+  display: none;
+}
+
 .header-menu > ul > li:first-child a {
   padding-left: 0;
 }
@@ -317,6 +321,11 @@ label {
 
 .sub-menu ul li a:hover {
   color: #fff;
+}
+
+.sub-menu-2 {
+  width: 600px;
+  padding: 30px;
 }
 
 .menu-dropdown:hover .sub-menu {
