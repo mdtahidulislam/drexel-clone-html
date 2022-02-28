@@ -180,9 +180,14 @@
     /*================================
             Footer accordion
     =================================*/
-    $(document).ready(function(){
-        $('.module-title').click(function(){
-            $(this).next('.content').slideToggle();
+    
+        $(document).ready(function(){
+            if (window.innerWidth <= 575 ) {
+                $('.module-title').click(function(){
+                    $(this).next('.content').slideToggle();
+                    console.log('clicked');
+                });
+            }
         });
-    });
+    
 })(jQuery);

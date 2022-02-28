@@ -118,6 +118,9 @@
     .header-link {
         padding: 0;
     }
+}
+
+@media (max-width: 575px) {
     .module-title i {
         display: inline-block;
     }
@@ -133,5 +136,4 @@
     .slide-des .text a {
         margin-top: 0;
     }
-    
 }
