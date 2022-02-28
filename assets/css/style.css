@@ -14,6 +14,12 @@
 
     01. Theme default CSS	
     02. Header CSS
+    03. Banner Slider CSS
+    04. Product Slider CSS
+    05.  Bloc Text CSS
+    06. Newletter CSS
+    07. Brand slider CSS
+    08. Footer CSS
 
 -----------------------------------------------------------------------------------*/
 /*----------------------------------------*/
@@ -175,9 +181,17 @@ label {
 .p-absolute {
   position: absolute; }
 
+/* text font */
+.text-primary-font {
+  font-family: var(--theme-primary-font);
+}
+.text-secondary-font {
+  font-family: var(--theme-secondary-font);
+}
+
 /* text color class */
 .text-primary {
-    color: var(--theme-primary);
+    color: var(--theme-primary) !important;
 }
 .text-secondary {
     color: var(--theme-secondary);
@@ -241,6 +255,9 @@ label {
   color: #fff !important;
 }
 
+.text-hover-secondary:hover {
+  color: var(--theme-secondary) !important;
+}
 .bg-hover-secondary:hover {
   background: var(--theme-secondary) !important;
 }
@@ -497,4 +514,573 @@ a.header-cart__mobile {
   width: 49%;
   letter-spacing: 1px;
   border-radius: 0px;
+}
+
+/*----------------------------------------*/
+/*  03. Banner Slider CSS
+/*----------------------------------------*/
+.slide-img {
+  width: 100%;
+}
+
+.slide-des {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  left: 10%;
+}
+
+.slide-des .title {
+  font-weight: 300;
+  font-size: 36px;
+  text-transform: uppercase;
+  line-height: 36px;
+  margin: 0 0 5px;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.slide-des .title span {
+  font-weight: 600;
+}
+
+.slide-des .caption p {
+  font-size: 13px;
+  line-height: 35px;
+  margin: 0;
+  letter-spacing: 1px;
+  color: #888888;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+
+.slide-des .text a {
+  padding: 0 0px;
+  display: inline-block;
+  transition: all 0.3s ease-in-out 0s;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 14px;
+  letter-spacing: 1px;
+  height: 40px;
+  line-height: 45px;
+  margin-top: 25px;
+  border-bottom: 1px solid #222222;
+  color: #222222;
+  background: rgba(0,0,0,0);
+}
+
+.slide-des .text a:hover {
+  color: #888888;
+  border-bottom: 1px solid #888888;
+  background: rgba(0,0,0,0);
+}
+
+/* center des */
+.slide-des.text-center {
+  left: 50%;
+  bottom: 15%;
+  transform: translate(-50%, 15%);
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ddd;
+  transform: all 0.3s;
+}
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background: var(--theme-primary);
+}
+.swiper-button-prev:hover:after,
+.swiper-button-next:hover:after {
+  color: #fff;
+}
+
+.swiper-button-prev:after {
+  content: '\f053';
+}
+.swiper-button-next:after {
+  content: '\f054';
+}
+
+.swiper-button-prev:after, 
+.swiper-button-next:after {
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 600;
+  font-size: var(--theme-fs-xs);
+  color: var(--theme-primary);
+  transition: all 0.3s;
+}
+
+/*----------------------------------------*/
+/*  04. Product Slider CSS
+/*----------------------------------------*/
+
+.typo-tabs-product {
+  padding: 80px 0;
+}
+
+.tabs-heading nav {
+  margin-bottom: 30px;
+}
+
+.tab-item {
+  margin-right: 30px;
+}
+
+.tab-item.active {
+  color: var(--theme-secondary) !important;
+  border-bottom: 1px solid var(--theme-secondary);
+}
+
+/* single product */
+.product-inner {
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.grid-item .product-image {
+  position: relative;
+  z-index: 3;
+}
+
+.product-item a.grid-image, 
+.product-item a.product-grid-image {
+  position: relative;
+  display: block;
+}
+
+.product-image a {
+  display: block;
+}
+
+.product-image img {
+  display: block!important;
+  width: 100%!important;
+}
+
+.grid-item .product-image .add-to-link {
+  width: 40px;
+  text-align: center;
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.product-item .add-to-link, .product-item .add-to-link {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+}
+
+.product-item:hover .add-to-link {
+  opacity: 1;
+  visibility: visible;
+}
+
+.product-item .grid-image:before, .product-item .product-grid-image:before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.2);
+  transition: all .5s;
+  -moz-transition: all .5s;
+  -webkit-transition: all .5s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.product-item:hover .grid-image:before, 
+.product-item:hover .product-grid-image:before {
+  filter: alpha(opacity=100);
+  opacity: 1;
+  visibility: visible;
+}
+
+.product-item .add-to-link .sca-qv-button, 
+.product-item .add-to-link .product-wishlist a {
+  border: none;
+  background: none;
+  color: #000;
+  font-size: 18px;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  padding: 9px 10px;
+  line-height: 1;
+}
+
+.product-item:hover .add-to-link .sca-qv-button, 
+.product-item:hover .add-to-link .product-wishlist a {
+  opacity: 1;
+  visibility: visible;
+}
+
+.grid-item .product-content {
+  position: relative;
+  padding-bottom: 0;
+}
+
+.product-content h3 {
+  font-size: 1em;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  line-height: normal;
+  margin: 0;
+  padding: 15px 0 4px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.product-content h3 a {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: normal;
+  line-height: 16px;
+}
+
+.product-item .review-ratting {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  height: 28px;
+}
+
+.spr-badge {
+  *zoom: 1;
+  min-height: auto;
+  min-width: auto;
+  display: block;
+}
+
+.spr-badge {
+  font-size: 12px;
+}
+
+.spr-badge-starrating {
+  margin: 0 3px 0 0;
+}
+
+.spr-badge-starrating .spr-icon {
+  font-size: 100%;
+}
+
+.spr-icon {
+  font-size: 120%;
+  position: relative;
+  top: 1px;
+  width: 1.3em;
+  height: 1.3em;
+}
+
+.spr-badge-caption {
+  display: none;
+}
+
+.product-change-button {
+  height: 33px;
+  overflow: hidden;
+}
+
+.product-content-bottom {
+  height: 66px;
+  overflow: hidden;
+  -webkit-transition: -webkit-transform .3s ease;
+  -moz-transition: -moz-transform .3s ease;
+  -o-transition: -o-transform .3s ease;
+  -ms-transition: -ms-transform .3s ease;
+  transition: -webkit-transform .3s ease;
+  -o-transition: transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease, -webkit-transform .3s ease;
+  -moz-transform: rotate(0);
+  -webkit-transform: translateZ(0);
+}
+
+.product-content-bottom > div {
+  line-height: 33px;
+  height: 33px;
+  overflow: hidden;
+}
+
+.price-box .money{
+  font-size: 18px !important;
+  font-family: var(--theme-secondary-font) !important;
+  line-height: 1 !important;
+  letter-spacing: 0px;
+  font-weight: 500 !important;
+  color: #222 !important;
+}
+
+.product-item .add-to-cart .btn {
+  position: relative;
+  top: -3px;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid #000;
+  background: none;
+  color: #000;
+  font-size: 12px;
+  font-weight: 600;
+  height: 28px;
+  line-height: 33px;
+  padding: 0 0px;
+  z-index: 2;
+  text-transform: uppercase;
+  border-radius: 0px;
+}
+
+.product-item:hover .product-content-bottom {
+  transform: translateY(-33px);
+  -ms-transform: translateY(-33px);
+  -webkit-transform: translateY(-33px);
+}
+
+.product-featured-content {
+  position: relative;
+}
+
+.prod-nav {
+  position: absolute;
+  top: -34px;
+  right: 0;
+}
+
+.prod-nav .swiper-button-prev,
+.prod-nav .swiper-button-next {
+  width: 27px;
+  height: 27px;
+  top: 80%;
+}
+
+.prod-nav .swiper-button-next {
+  right: 0;
+}
+
+.prod-nav .swiper-button-prev {
+  right: 35px;
+  left: auto;
+}
+
+.prod-nav .swiper-button-prev:after, 
+.prod-nav .swiper-button-next:after {
+  font-size: var(--theme-fs-xxs) !important;
+}
+
+/*----------------------------------------*/
+/*  05.  Bloc Text CSS
+/*----------------------------------------*/
+.home-block-text-image {
+  padding: 30px 0;
+  position: relative;
+}
+
+.typo-block-text-image .block-text-image-content {
+  text-transform: uppercase;
+  left: 10%;
+  position: absolute;
+  top: 60%;
+  -o-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.typo-block-text-image .block-text-image-content h3 {
+  font-family: var(--theme-secondary-font) !important;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  line-height: normal;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 34px;
+}
+
+.typo-block-text-image .block-text-image-content h4 {
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 15px;
+}
+
+.typo-block-text-image .block-text-image-content p a {
+  border-bottom: 1px solid;
+}
+
+/*----------------------------------------*/
+/*  06. Newletter CSS
+/*----------------------------------------*/
+.newsleter-content {
+  padding: 150px 30px;
+  background: #eeeeee;
+}
+
+.typo-newsletter .typo-newsletter-content h3.module-title {
+  font-weight: 500;
+  font-size: 30px;
+  text-transform: uppercase;
+  line-height: 30px;
+  margin-bottom: 15px;
+  color: #222;
+  letter-spacing: 1px;
+}
+
+.typo-newsletter .typo-newsletter-content .small-title {
+  font-style: italic;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  color: #888;
+  line-height: 20px;
+  margin-bottom: 45px;
+}
+
+.input-group {
+  position: relative;
+  display: table;
+  border-collapse: separate;
+}
+
+.typo-newsletter .typo-newsletter-content input.input-group-field {
+  color: #000;
+  background: none;
+  height: 43px;
+  line-height: 43px;
+  border: 1px solid #dddddd;
+  text-transform: capitalize;
+  width: 100%;
+}
+
+.input-group-btn {
+  position: relative;
+  font-size: 0;
+  white-space: nowrap;
+}
+
+.typo-newsletter .typo-newsletter-content input.btn {
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 43px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.email {
+  padding: 5px 10px;
+}
+
+.input-group-btn .btn {
+  position: absolute;
+  right: 0;
+  background: var(--theme-primary);
+  border-radius: 0;
+  color: #fff;
+}
+
+/*----------------------------------------*/
+/*  07. Brand slider CSS
+/*----------------------------------------*/
+.brand-logo img {
+  opacity: 0.5;
+  transition: all 0.3s;
+}
+
+.brand-logo a:hover img {
+  opacity: 1;
+}
+
+/*----------------------------------------*/
+/*  08. Footer CSS
+/*----------------------------------------*/
+/* footer top */
+.typo-footer .footer-top {
+  border-top: 1px solid #f3f3f3;
+  padding-top: 80px;
+  position: relative;
+  z-index: 1;
+  line-height: 24px;
+  padding-bottom: 60px;
+}
+
+.typo-footer ul.content {
+  margin-bottom: 10px;
+}
+
+.module-title {
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.module-title i {
+  display: none;
+}
+
+.content li a {
+  font-size: var(--theme-fs-xxs);
+  line-height: 34px;
+  color: var(--theme-secondary);
+  transition: all 0.3s ease 0;
+}
+
+.content li a:hover {
+  color: var(--theme-primary);
+}
+
+/* footer bottom */
+.footer-bottom {
+  padding-top: 18px;
+  padding-bottom: 5px;
+  border-top: 1px solid #eeeeee;
+}
+
+.typo-footer .footer-bottom address {
+  font-size: 12px;
+  padding: 5px 0 5px 0;
+  text-transform: capitalize;
+}
+
+.footer-bottom address {
+  color: #969696;
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+.typo-footer .footer-icon {
+  padding-top: 0px;
+  text-align: right;
+}
+
+.typo-footer .footer-icon h5 {
+  display: inline-block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.typo-footer .footer-icon .footer-icon-share {
+  display: inline-block;
+}
+
+.typo-footer .footer-icon .footer-icon-share a {
+  margin-left: 15px;
 }

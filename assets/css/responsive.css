@@ -79,4 +79,10 @@
     .header-link {
         padding: 0;
     }
+    .module-title i {
+        display: inline-block;
+    }
+    .typo-footer .content {
+        display: none;
+    }
 }
