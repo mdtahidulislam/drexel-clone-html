@@ -47,6 +47,7 @@
     --theme-secondary-font: "Oswald",sans-serif;
 
     /* font size */
+    --theme-fs-xxss: 12px;
     --theme-fs-xxs: 14px;
     --theme-fs-xs: 16px;
     --theme-fs-s: 18px;
@@ -198,6 +199,9 @@ label {
     background: var(--theme-bg-lighter);
 }
 /* font size class */
+.text-fs-xxss {
+    font-size: var(--theme-fs-xxss);
+}
 .text-fs-xxs {
     font-size: var(--theme-fs-xxs);
 }
@@ -233,6 +237,13 @@ label {
     font-weight: 700;
 }
 
+.text-hover-white:hover {
+  color: #fff !important;
+}
+
+.bg-hover-secondary:hover {
+  background: var(--theme-secondary) !important;
+}
 /* container */
 @media (min-width:576px){
   .container,.container-sm{max-width:550px}
@@ -405,4 +416,85 @@ label {
 
 a.header-cart__mobile {
   display: none;
+}
+
+/* dropdwon cart */
+.dropdown-cart__empty {
+  padding: 0 !important;
+}
+.dropdown-cart__empty p {
+  font-size: 14px;
+  padding: 10px;
+}
+
+.header-cart {
+  position: relative;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+.dropdown-cart {
+  position: absolute;
+  width: 360px;
+  right: 0;
+  padding: 0 !important;
+  background: #222;
+  color: #fff;
+  text-align: left;
+  opacity: 0;
+  visibility: hidden;
+  top: 50px;
+  transition: all 0.3s;
+}
+
+.header-cart:hover .dropdown-cart {
+  visibility: visible;
+  opacity: 1;
+  top: 38px;
+  z-index: 99;
+}
+
+/* dropdown mini cart */
+.dropdown-mini-cart {
+  padding: 25px !important;
+}
+
+.product-inner {
+  flex: 1 0 auto;
+}
+
+.dropdown-mini-cart .btn-remove {align-self: end;}
+
+.dropdown-mini-cart .price {
+  font-family: 'oswald',sans-serif;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+.product-name {
+  line-height: 14px;
+}
+
+.product-name a {
+  line-height: 14px;
+  letter-spacing: 1px;
+}
+
+.total span {
+  font-size: 18px !important;
+  font-weight: 500;
+}
+
+.total {
+  padding-top: 20px;
+  margin-bottom: 20px;
+  border-top: 1px solid var(--theme-secondary);
+  margin-top: 20px;
+}
+
+.actions .btn {
+  background: #000;
+  width: 49%;
+  letter-spacing: 1px;
+  border-radius: 0px;
 }
